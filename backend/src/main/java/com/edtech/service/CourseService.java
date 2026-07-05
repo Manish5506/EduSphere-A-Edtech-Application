@@ -30,7 +30,7 @@ public class CourseService {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
+    @jakarta.persistence.PersistenceContext
     private jakarta.persistence.EntityManager entityManager;
 
     // --- CATEGORY OPERATIONS ---
