@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: backend
+
+  datasource:
+    url: ${DATABASE_URL:jdbc:mysql://localhost:3306/edtech_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+# Actuator for Monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus
+  endpoint:
+    health:
+      show-details: always
+
+# Custom App Security & Integration Parameters
+app:
+  jwtSecret: ${JWT_SECRET:9a4f2c8d3b7a1e6f8c5b3a2d1e0f9c8b7a6d5c4b3a2e1d0f9c8b7a6e5d4c3b2a}
+  jwtExpirationInMs: 604800000 # 7 days
+  
+  cloudinary:
+    cloud-name: ${CLOUDINARY_CLOUD_NAME:placeholder}
+    api-key: ${CLOUDINARY_API_KEY:placeholder}
+    api-secret: ${CLOUDINARY_API_SECRET:placeholder}
+
+  razorpay:
+    key-id: ${RAZORPAY_KEY_ID:placeholder}
+    key-secret: ${RAZORPAY_KEY_SECRET:placeholder}
+
+server:
+  port: 8080
+  error:
+    include-message: always

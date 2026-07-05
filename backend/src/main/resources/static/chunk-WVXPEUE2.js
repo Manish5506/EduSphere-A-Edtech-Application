@@ -1,0 +1,1 @@
+import{Eb as o,H as r,Hb as a,M as e}from"./chunk-4FBX4GON.js";var n=class t{http=e(o);apiUrl=`${a.apiUrl}/api/dashboard`;getStats(){return this.http.get(`${this.apiUrl}/stats`)}static \u0275fac=function(s){return new(s||t)};static \u0275prov=r({token:t,factory:t.\u0275fac,providedIn:"root"})};export{n as a};
