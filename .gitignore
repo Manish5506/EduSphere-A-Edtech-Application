@@ -29,3 +29,7 @@ redis_data/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Project reports
+project_report.docx
+project_report.md

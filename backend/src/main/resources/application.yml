@@ -53,6 +53,6 @@ app:
     key-secret: ${RAZORPAY_KEY_SECRET:placeholder}
 
 server:
-  port: 8080
+  port: ${PORT:8080}
   error:
     include-message: always
